@@ -102,16 +102,7 @@ textarea {
      color: #fff;
      
    }
-   .card-footer{
-     background-color: black;
-     padding-top: 1em;
-     
-   }
-   footer{
-     position: relative;
-    margin-bottom: 0%;
-    margin-top: 100vw;
-   }
+  
    .title{
      text-align: center;
    }
@@ -125,8 +116,17 @@ textarea {
      display: none;
    }
 
-   /* -------------------------------------------------------------footer--------------------------------------------------- */
-
+   /* -------------------------------------------------------------footer-------------------------------------------------------- */
+  .card-footer{
+      background-color: black;
+      padding-top: 1em;
+      
+    }
+    footer{
+      position: relative;
+      margin-bottom: 0%;
+      margin-top: 100vw;
+    }
   .foot{
     display: flex;
     justify-content: space-around;
@@ -150,9 +150,6 @@ textarea {
     min-height: 1px;
     padding: 0rem;
   }
-
-
-
 /* -------------------------------------------------------------------------nav----------------------------------------------------- */
 
 
@@ -179,9 +176,13 @@ textarea {
     text-decoration: none;
     display: block;
   }
-  .dropdown-menu a:hover {background-color: #ddd;}
+  .dropdown-menu a:hover {
+    background-color: #ddd;
+  }
   
-  .navbar-toggler:hover .dropdown-menu {display: block;}
+  .navbar-toggler:hover .dropdown-menu {
+    display: block;
+  }
 
 
 
