@@ -86,6 +86,116 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+   *{
+     margin: 0;
+     padding: 0;
+   }
+
+   body{
+     width: 100%;
+     background-color: #999;
+   }
+
+
+   #head{
+     background-color: black;
+     color: #fff;
+     
+   }
+   .card-footer{
+     background-color: black;
+     padding-top: 1em;
+     
+   }
+   footer{
+     position: relative;
+    margin-bottom: 0%;
+    margin-top: 100vw;
+   }
+   .title{
+     text-align: center;
+   }
+
+  
+   article{
+     margin: 2em 0 0 1em;
+     border: 1px solid black;
+     border-radius: 5px;
+     width: 40%;
+     display: none;
+   }
+
+   /* -------------------------------------------------------------footer--------------------------------------------------- */
+
+  .foot{
+    display: flex;
+    justify-content: space-around;
+  }
+  .foot img{
+    height: 50px;
+  }
+
+  .foot ul li a{
+    text-decoration: none;
+    color: black;
+  }
+  .foot ul li{
+    list-style-type: none;
+    line: height 2em;;
+  }
+
+  .card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 0rem;
+  }
+
+
+
+/* -------------------------------------------------------------------------nav----------------------------------------------------- */
+
+
+  nav img{
+    height: 50px;
+  }
+
+  .dropdown{
+    position: absolute;
+    display: inline-block;
+  }
+  .dropdown-menu{
+    display: none;
+    position: relative;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    float: right;
+  }
+  .dropdown-menu a{
+    color: black;
+    padding: 12px 12px;
+    text-decoration: none;
+    display: block;
+  }
+  .dropdown-menu a:hover {background-color: #ddd;}
+  
+  .navbar-toggler:hover .dropdown-menu {display: block;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ==========================================================================
    Helper classes
