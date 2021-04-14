@@ -185,8 +185,26 @@ textarea {
   }
 
 
+  /* -------------------------------main--------------------------------------- */
 
+  .cardsPlay{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-top: 20em;
+    align-items: center;
+    
 
+  }
+  .btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    padding: 4em;
+    margin-bottom: 2em;
+}
+
+/* 
 
 
 
