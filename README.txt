@@ -1,6 +1,6 @@
 PRESENTATION DE L'EVALUATION FRONT END :
 
-JJEU DE PAIRE :
+JEU DE PAIRE :
 Ce projet du jeu et une évaluation sur les compétences acquises en FRONT-END depuis le debut de formation, elle verifie que le stagiaire peut :
 
 -Maquetter une application
@@ -39,7 +39,7 @@ Critères techniques d’évaluation :
 - JavaScript avec respect des normes ES6
 - Vous avez produit des maquettes de type wireframe pour tous les écrans avec un design adapté
 - Vous avez produit une arborescence fonctionnelle de l’application reprenant les cas d’utilisation
-possible de la page (idéalement avec les spécifications fonctionnelles bonus)
+  possible de la page (idéalement avec les spécifications fonctionnelles bonus)
 - Vos maquettes ont été réalisées avec un outil de maquettage
 - Vos wireframes sont accessibles dans un dossier DOC
 - Votre interface est responsive sur tous les supports
