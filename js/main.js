@@ -10,22 +10,30 @@
 //     })
 // }
 
+
+
+
+
+//constante dans la on va stocker notre jeu
+//on selection l'id resultat pour pouvoir le modifier 
 const result = document.querySelector("#resultat");
-//varibale qui permettra de savoir si on  atrouver des paires ou pas
+
+
+//tableau de cartes
 let tabJeu = [
-    [0,1,3,0],
-    [0,2,4,0],
-    [0,6,5,0],
-    [0,7,8,0]
+    [0,0,0,0],
+    [0,0,0,0],
+    [0,0,0,0],
+    [0,0,0,0]
 ]
 
 afficherTableau();
-
+//fonction qui realise l'affichage sur notre site web
 function afficherTableau(){
     let txt ="";
     // tableau bi-dimentionnel
-    //boucle qui va parcourir chaque index (ligne dans un premier temps)dans  le tableau tabJeu
 
+    //boucle qui va parcourir chaque index (ligne dans un premier temps)dans  le tableau tabJeu
     for(let i= 0; i < tabJeu.length; i++){
         txt += "<div>";
    
@@ -34,13 +42,14 @@ function afficherTableau(){
             if(tabJeu[i][j] === 0){
             txt += "<button class= 'btn btn-primary m-2'>Jouer</button>"; 
             }else{
-                //je concacatene avec la fonction getImage en lui passant en parametre la valaeur de tabJeu[i][j]
+                //je concacatene avec la fonction getImage en lui passant en parametre la valeur de tabJeu[i][j]
                 txt += "<img src='"+getImage(tabJeu[i][j])+"'  class='m-2'> "
                 
             }
         }
         txt += "</div>";
     }
+    //je rajoute a mon id resultat le contenue de la variable txt(les carte ou images)
     result.innerHTML = txt;
 } 
 
