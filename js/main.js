@@ -16,6 +16,9 @@
 
 //constante dans la on va stocker notre jeu
 //on selection l'id resultat pour pouvoir le modifier 
+
+// --------------------------------------------------------script game-----------------------------------------------------------
+
 const result = document.querySelector("#resultat");
 
 
@@ -57,24 +60,24 @@ function afficherTableau(){
 
 function getImage(valeur){
     //selon la valeur on va retourner(switcher) l'image correspondante
-    //varable qui va stovker le chemin de l'image correspondante à la valeur de [i][j]. 
+    //varable qui va stocker le chemin de l'image correspondante à la valeur de [i][j]. 
     let imgTxt = "img/";
     switch(valeur){
-        case 1 : imgTxt += "elephant.png";
+        case 1 : imgTxt += "mario.png";
         break;
-        case 2 : imgTxt += "panda.png";
+        case 2 : imgTxt += "champignon_marron.png";
         break;
-        case 3 : imgTxt += "parrot.png";
+        case 3 : imgTxt += "croco_mechant.png";
         break;
-        case 4 : imgTxt += "snake.png";
+        case 4 : imgTxt += "champignon_vert.png";
         break;
-        case 5 : imgTxt += "monkey.png";
+        case 5 : imgTxt += "champignon_rouge.png";
         break;
-        case 6: imgTxt += "rabbit.png";
+        case 6: imgTxt += "canon.png";
         break;
-        case 7 : imgTxt += "rhino.png";
+        case 7 : imgTxt += "fantome.png";
         break;
-        case 8 : imgTxt += "zebra.png";
+        case 8 : imgTxt += "carapace.png";
         break;
         // dans un switchcase on a generalement un default
         default : console.log("cas non pris en compte");
