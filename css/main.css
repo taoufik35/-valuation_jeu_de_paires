@@ -215,13 +215,12 @@ textarea {
   }
   .container{
     text-align: center;
+    margin-top: 5em;
     
   }
   .container img{
-    padding: 4em;
-    margin-bottom: 2em;
-    width: 100px;
-    height: 
+    width: 160px;
+    height: 100px;
 
   }
 
@@ -242,13 +241,6 @@ textarea {
    display: none;
    
  }
-
- 
-@media only screen and (min-width: 756px) {
-  article{
-    display: block;
-  }
-}
 
 
 
