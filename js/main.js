@@ -32,13 +32,13 @@ let tabJeu = [
 
 //je creer un tableau de resultat qui contient le melange de toutes nos images on fera ensuite de generer ce tableau de maniere aléatoire 
 // je vais utiliser ce tableau pour afficher les elements de ma grille 
-let tabResultat = [
-    [1,2,5,7],
-    [1,2,5,8],
-    [3,3,6,7],
-    [4,4,6,8]
-]
-
+// let tabResultat = [
+//     [0,,5,7],
+//     [0,0,5,8],
+//     [0,0,6,7],
+//     [0,0,6,8]
+// ]
+ let tabResultat = genereTabAleatoire();
 
 
 //je creer cette variable pour la conparaison des boutons cliquez et notamment le clique precedent. j'initialise la vairiable a vide. 
@@ -160,6 +160,40 @@ function verif(bouton){
      
     }
    
+
+}
+
+
+//function qui va genere le tableau aleatoirement 
+
+function genereTabAleatoire(){
+    let tab = [];
+// cette variable contiendra le nombre d'image qu'il ya dans le tableau
+    let nbImagePosition = [0,0,0,0,0,0,0,0];
+
+    for(let i = 0; i < 4 ; i++){
+        let ligne = [];
+        for(let j = 0; j < 4 ; j++){
+           let fin = false;
+           while(!fin){
+                //genere un umeros entre 0-7
+            let randomImage =Math.floor (Math.random() * 8);
+            if(nbImagePosition[randomImage] < 2){
+
+                //+1 car nos images correspondant au valeur de 1 a 8 et non de 0 a 7
+                ligne.push(randomImage +1);
+                nbImagePosition[randomImage]++;
+                fin = true;
+            }
+            
+           }
+       
+        }
+
+        tab.push(ligne);
+    }
+    return tab;
+
 
 }
 
