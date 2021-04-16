@@ -18,17 +18,6 @@
 //on selection l'id resultat pour pouvoir le modifier 
 
 // --------------------------------------------------------script game-----------------------------------------------------------
-//fonction pour afficher le tableau le tableau de carte
-let btn = document.getElementById("myBtn");
-let container = document.getElementById("container");
-
-
-btn.onclick = function() {
-  container.style.display = "block";
-  btn.style.display = "none";
-
-  
-}
 
 
 
