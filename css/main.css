@@ -214,12 +214,13 @@ textarea {
   }
   .container{
     text-align: center;
-    margin-top: 5em;
     
   }
   .container img{
-    width: 160px;
-    height: 100px;
+    padding: 4em;
+    margin-bottom: 2em;
+    width: 100px;
+    height: 
 
   }
 

@@ -14,7 +14,8 @@
 
 
 
-
+//constante dans la on va stocker notre jeu
+//on selection l'id resultat pour pouvoir le modifier 
 
 // --------------------------------------------------------script game-----------------------------------------------------------
 
@@ -22,23 +23,6 @@
 
 
 
-
-
-//fonction pour afficher le tableau le tableau de carte
-let btn = document.getElementById("myBtn");
-let container = document.getElementById("container");
-
-
-btn.onclick = function() {
-  container.style.display = "block";
-  btn.style.display = "none";
-}
-
-
-
-
-//constante dans la on va stocker notre jeu
-//on selection l'id resultat pour pouvoir le modifier 
 
 
 const result = document.querySelector("#resultat");
@@ -177,9 +161,12 @@ function verif(bouton){
         // nous  allons faire en sorte de concerver le clique precedent a chaque fois pour cela je vais utiliser  (Oldselection) que je declare plus haut 
         oldSelection = [ligne,colonne];
         }
+
+
      
     }
    
+
 }
 
 
@@ -206,10 +193,14 @@ function genereTabAleatoire(){
             }
             
            }
+       
         }
+
         tab.push(ligne);
     }
     return tab;
+
+
 }
 
 
