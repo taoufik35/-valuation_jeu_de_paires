@@ -24,7 +24,7 @@
 
 
 
-//fonction pour afficher le tableau le tableau de carte
+//fonction pour afficher le tableau de carte apres a    ppuie sur le bouton play
 let btn = document.getElementById("myBtn");
 let container = document.getElementById("container");
 
@@ -65,7 +65,7 @@ let tabJeu = [
 
 //je creer cette variable pour la conparaison des boutons cliquez et notamment le clique precedent. j'initialise la vairiable a vide. 
 let oldSelection = [];
-// ensuite jai besoin de savoir ou esque j'en suis dans mes affichage esque jai deja un image afficher ou non esque je sis sur le 1er clique ou le 2 em donc je creer une variable qui va concerver cela 
+// ensuite jai besoin de savoir ou esque j'en suis dans mes affichage esque jai deja un image afficher ou non esque je suis sur le 1er clique ou le 2 em donc je creer une variable qui va concerver cela 
 let nbAffiche = 0;
 //dnc une fois que l'on aura cliquer sur une image on aura nbAffiche +1 et quand on cliquera sur la deuxieme image on aura +1  aussi donc nbAffiche a +2
 
@@ -146,14 +146,13 @@ function verif(bouton){
         //on increment nbAffiche
             nbAffiche++;
 
-            // je creer ma variable qui va recuperer l'element qui se trouve dans bonton.substr le lui placant sont emplacement en parametre (1-2)
+            // je creer ma variable qui va recuperer l'element qui se trouve dans bonton.substr en lui placant sont emplacement en parametre (1-2)
             let ligne = bouton.substr(0,1);
             //je recupere aussi le contenue la colonne que jai vu dans la console (1-2)
             let colonne = bouton.substr(2,1);   
             //j'associe les ligne et colonne de mon tableau tabjeu a mon tableau tabResultat afin que si dans mon tabJeu je clique sur un bouton que celui-ci corresponde a l'index situer dans tabResultat
             tabJeu[ligne][colonne] = tabResultat[ligne][colonne];
 
-            //maintenant ce que l'on aimerez c'est afficher l'image du bouton sur lequelle on aura cliquer pur se faire il va falloir generer un tableau de resultat comme celui creer au debut qui va contenir le melange de toutes nos images
             // et je reaffiche mon tableau avec 
             afficherTableau();
 
@@ -182,7 +181,7 @@ function verif(bouton){
    
 }
 
-
+//maintenant ce que l'on aimerez c'est afficher l'image du bouton sur lequelle on aura cliquer pour se faire il va falloir generer un tableau de resultat comme celui creer au debut qui va contenir le melange de toutes nos images
 //function qui va genere le tableau aleatoirement 
 
 function genereTabAleatoire(){
@@ -195,7 +194,7 @@ function genereTabAleatoire(){
         for(let j = 0; j < 4 ; j++){
            let fin = false;
            while(!fin){
-                //genere un umeros entre 0-7
+                //genere un numeros entre 0-7
             let randomImage =Math.floor (Math.random() * 8);
             if(nbImagePosition[randomImage] < 2){
 
