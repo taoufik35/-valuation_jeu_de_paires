@@ -28,11 +28,11 @@
 let btn = document.getElementById("myBtn");
 let container = document.getElementById("container");
 
-
-btn.onclick = function() {
+//fonction fleché
+btn.onclick = (() => {
   container.style.display = "block";
   btn.style.display = "none";
-}
+})
 
 
 
@@ -55,7 +55,7 @@ let tabJeu = [
 //je creer un tableau de resultat qui contient le melange de toutes nos images on fera ensuite de generer ce tableau de maniere aléatoire 
 // je vais utiliser ce tableau pour afficher les elements de ma grille 
 // let tabResultat = [
-//     [0,,5,7],
+//     [0,5,7,0],
 //     [0,0,5,8],
 //     [0,0,6,7],
 //     [0,0,6,8]
@@ -65,7 +65,7 @@ let tabJeu = [
 
 //je creer cette variable pour la conparaison des boutons cliquez et notamment le clique precedent. j'initialise la vairiable a vide. 
 let oldSelection = [];
-// ensuite jai besoin de savoir ou esque j'en suis dans mes affichage esque jai deja un image afficher ou non esque je suis sur le 1er clique ou le 2 em donc je creer une variable qui va concerver cela 
+// ensuite jai besoin de savoir ou esque j'en suis dans mes affichage esque jai deja une  image afficher ou non esque je suis sur le 1er clique ou le 2 em donc je creer une variable qui va concerver cela 
 let nbAffiche = 0;
 //dnc une fois que l'on aura cliquer sur une image on aura nbAffiche +1 et quand on cliquera sur la deuxieme image on aura +1  aussi donc nbAffiche a +2
 
@@ -137,7 +137,7 @@ function getImage(valeur){
     //maintenant il va falloir definir ce que l'on veut retrourner (return) , et ce que l' on veut retourner c'est simplement le chemin de l'image correspondante à la valeur de [i][j].  
 }
 
-// je creer la fonction verif quoi va recuperer l'element cliquer 
+// je creer la fonction verif quoi va recuperer le bouton cliquer 
 // nous allons donc decouper le bouton afin de recuperer la ligne et la colonne.
 
 function verif(bouton){
