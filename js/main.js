@@ -22,9 +22,9 @@
 
 
 
+//-------------------------button start--------------------------------------------
 
-
-//fonction pour afficher le tableau de carte apres a    ppuie sur le bouton play
+//fonction pour afficher le tableau de carte apres appuie sur le bouton play
 let btn = document.getElementById("myBtn");
 let container = document.getElementById("container");
 
@@ -38,9 +38,6 @@ btn.onclick = (() => {
 
 
 //constante dans la on va stocker notre jeu
-//on selection l'id resultat pour pouvoir le modifier 
-
-
 const result = document.querySelector("#resultat");
 
 
@@ -53,13 +50,6 @@ let tabJeu = [
 ];
 
 //je creer un tableau de resultat qui contient le melange de toutes nos images on fera ensuite de generer ce tableau de maniere aléatoire 
-// je vais utiliser ce tableau pour afficher les elements de ma grille 
-// let tabResultat = [
-//     [0,5,7,0],
-//     [0,0,5,8],
-//     [0,0,6,7],
-//     [0,0,6,8]
-// ]
  let tabResultat = genereTabAleatoire();
 
 
@@ -92,7 +82,6 @@ function afficherTableau(){
         for(let j = 0; j < tabJeu[i].length; j++){
             if(tabJeu[i][j] === 0){
                 // afin de verifier au click la valeur de l'index choisi je place la fonction verif en lui passant en parametre la position de l'index dans le tableau
-                //je rejoute un backslash(\)entre les indice pour desactiver le guillemet que nous utilisont pour realiser notre chaine de caractere dans txt
             txt += "<button class= 'btn btn-primary m-2' onclick = 'verif(\""+i+"-"+j+"\")'>Jouer</button>"; 
             }else{
                 //je concacatene avec la fonction getImage en lui passant en parametre la valeur de tabJeu[i][j]
@@ -110,7 +99,7 @@ function afficherTableau(){
 
 function getImage(valeur){
     //selon la valeur on va retourner(switcher) l'image correspondante
-    //varable qui va stocker le chemin de l'image correspondante à la valeur de [i][j]. 
+    //variable qui va stocker le chemin de l'image correspondante à la valeur de [i][j]. 
     let imgTxt = "img/";
     switch(valeur){
         case 1 : imgTxt += "mario.png";
@@ -129,15 +118,12 @@ function getImage(valeur){
         break;
         case 8 : imgTxt += "carapace.png";
         break;
-        // dans un switchcase on a generalement un default
         default : console.log("cas non pris en compte");
     }
-    // vu que notre fonction doit retourner un element (getImage[i][j]) je rajoute a la fin un return  
     return imgTxt;
-    //maintenant il va falloir definir ce que l'on veut retrourner (return) , et ce que l' on veut retourner c'est simplement le chemin de l'image correspondante à la valeur de [i][j].  
 }
 
-// je creer la fonction verif quoi va recuperer le bouton cliquer 
+// je creer la fonction verif qui va recuperer le bouton cliquer 
 // nous allons donc decouper le bouton afin de recuperer la ligne et la colonne.
 
 function verif(bouton){
@@ -180,8 +166,6 @@ function verif(bouton){
     }
    
 }
-
-//maintenant ce que l'on aimerez c'est afficher l'image du bouton sur lequelle on aura cliquer pour se faire il va falloir generer un tableau de resultat comme celui creer au debut qui va contenir le melange de toutes nos images
 //function qui va genere le tableau aleatoirement 
 
 function genereTabAleatoire(){
@@ -197,8 +181,6 @@ function genereTabAleatoire(){
                 //genere un numeros entre 0-7
             let randomImage =Math.floor (Math.random() * 8);
             if(nbImagePosition[randomImage] < 2){
-
-                //+1 car nos images correspondant au valeur de 1 a 8 et non de 0 a 7
                 ligne.push(randomImage +1);
                 nbImagePosition[randomImage]++;
                 fin = true;
