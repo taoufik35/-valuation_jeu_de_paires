@@ -1,22 +1,7 @@
-// let red = document.getElementById("red","red1");
 
 
 
-// change();
-
-// function change(){
-//     red.addEventListener("click", function(){
-//         red.style.background = "black";
-//     })
-// }
-
-
-
-
-
-
-
-// --------------------------------------------------------script game-----------------------------------------------------------
+// --------------------------------------------------------game script-----------------------------------------------------------
 
 
 
@@ -28,7 +13,6 @@
 let btn = document.getElementById("myBtn");
 let container = document.getElementById("container");
 
-//fonction fleché
 btn.onclick = (() => {
   container.style.display = "block";
   btn.style.display = "none";
@@ -72,14 +56,10 @@ afficherTableau();
 //fonction qui realise l'affichage sur notre site web
 function afficherTableau(){
     let txt ="";
-    // tableau bi-dimentionnel
 
-    //boucle qui va parcourir chaque index (ligne dans un premier temps)dans  le tableau tabJeu
     for(let i= 0; i < tabJeu.length; i++){
         txt += "<div>";
-   
-     //boucle qui va parcourir chaque index (dans chaque ligne ) dans le tableau tabJeu
-        for(let j = 0; j < tabJeu[i].length; j++){
+           for(let j = 0; j < tabJeu[i].length; j++){
             if(tabJeu[i][j] === 0){
                 // afin de verifier au click la valeur de l'index choisi je place la fonction verif en lui passant en parametre la position de l'index dans le tableau
             txt += "<button class= 'btn btn-primary m-2' onclick = 'verif(\""+i+"-"+j+"\")'>Jouer</button>"; 
@@ -91,15 +71,13 @@ function afficherTableau(){
         }
         txt += "</div>";
     }
-    //je rajoute a mon id resultat le contenue de la variable txt(les carte ou images)
+    //je rajoute dans mon id resultat le contenue de la variable txt
     result.innerHTML = txt;
 } 
 
-// fonction switch case qui va parcourir les index et selon la valeur va retourner une image
+// ---------------------fonction switch case qui va parcourir les index et selon la valeur va retourner une image-------------------
 
 function getImage(valeur){
-    //selon la valeur on va retourner(switcher) l'image correspondante
-    //variable qui va stocker le chemin de l'image correspondante à la valeur de [i][j]. 
     let imgTxt = "img/";
     switch(valeur){
         case 1 : imgTxt += "mario.png";
@@ -123,34 +101,25 @@ function getImage(valeur){
     return imgTxt;
 }
 
-// je creer la fonction verif qui va recuperer le bouton cliquer 
-// nous allons donc decouper le bouton afin de recuperer la ligne et la colonne.
+// --------------------------je creer la fonction verif qui va recuperer le bouton cliquer----------------------------------------- 
 
 function verif(bouton){
-    //if correspndant au boulean ready
     if(ready){
-        //on increment nbAffiche
             nbAffiche++;
 
-            // je creer ma variable qui va recuperer l'element qui se trouve dans bonton.substr en lui placant sont emplacement en parametre (1-2)
             let ligne = bouton.substr(0,1);
-            //je recupere aussi le contenue la colonne que jai vu dans la console (1-2)
             let colonne = bouton.substr(2,1);   
-            //j'associe les ligne et colonne de mon tableau tabjeu a mon tableau tabResultat afin que si dans mon tabJeu je clique sur un bouton que celui-ci corresponde a l'index situer dans tabResultat
             tabJeu[ligne][colonne] = tabResultat[ligne][colonne];
 
-            // et je reaffiche mon tableau avec 
             afficherTableau();
 
-        // on creer notre comparaison 
+        // ------------------------------------ comparaison------------------------------------------------------ 
 
         if(nbAffiche>1){
             ready = false;
           setTimeout(() => {
-              //verification
               if(tabJeu[ligne][colonne] !== tabResultat[oldSelection[0]][oldSelection[1]]){
                 tabJeu[ligne][colonne] = 0;
-            // je reinitialise le dernier clique si les image ne correspond pas 
                 tabJeu[oldSelection[0]][oldSelection[1]] = 0;
             }
             afficherTableau();
@@ -158,15 +127,13 @@ function verif(bouton){
             nbAffiche = 0;
           },1000)  
         } else{
-               // maintenant ce quil faut faire c'est que l'orsque l'on clique sur 2 bouton que l'on face une verification pour voir si les images correspondent si elle corresponde alors on laissera les image afficher sinon on le retournera(c'est a dire remmetre la valeur 0 a l'interieur de notre tabjeu )
-        // nous  allons faire en sorte de concerver le clique precedent a chaque fois pour cela je vais utiliser  (Oldselection) que je declare plus haut 
         oldSelection = [ligne,colonne];
         }
      
     }
    
 }
-//function qui va genere le tableau aleatoirement 
+//--------------------------------function tableau aleatoirement--------------------------------------- 
 
 function genereTabAleatoire(){
     let tab = [];
@@ -178,8 +145,7 @@ function genereTabAleatoire(){
         for(let j = 0; j < 4 ; j++){
            let fin = false;
            while(!fin){
-                //genere un numeros entre 0-7
-            let randomImage =Math.floor (Math.random() * 8);
+            let randomImage = Math.floor (Math.random() * 8);
             if(nbImagePosition[randomImage] < 2){
                 ligne.push(randomImage +1);
                 nbImagePosition[randomImage]++;
